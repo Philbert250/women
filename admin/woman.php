@@ -7,7 +7,7 @@ if (isset($_POST['registerwoman'])){
     $email=$_POST['email'];
     $dob=$_POST['dob'];
     $location=$_POST['location'];
-    $sql=mysqli_query($conn,"INSERT INTO women(
+    $sql=mysqli_query($conn,"INSERT INTO parent(
         name,
         gender,
         dob,

@@ -77,7 +77,7 @@ if (isset($_POST['registeragent'])){
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $quer=mysqli_query($conn,"SELECT * FROM women");
+                                    $quer=mysqli_query($conn,"SELECT * FROM parent");
                                     while ($row=mysqli_fetch_array($quer)){
                                     ?>
                                     <tr>

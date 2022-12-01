@@ -88,9 +88,8 @@ if (isset($_POST['registeragent'])){
                                         <td><?php echo $row['Comments'] ; ?></td>
                                         <td><?php echo $row['timesent'] ; ?></td>
                                         <td>
-                                            <a class="btn btn-danger"  href="delete.php?delproduct=<?php echo $row['product_id']; ?> " onclick="return confirm('are you sure! you want to delete this product.')" id="red">Delete</a>
-                                            <a class="btn btn-primary"  href="productupdate.php?updateproduct=<?php echo $row['product_id']; ?>"  id="red">Update</a>
-                                          </td>
+                                            <a class="btn btn-danger"  href="delete.php?deltransfer=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this Transfer.')" id="red">Delete</a>
+                                        </td>
                                     </tr>
                                     <?php
                                     }

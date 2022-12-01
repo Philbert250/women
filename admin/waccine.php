@@ -74,7 +74,7 @@ if (isset($_POST['transfer'])){
                         <label for="exampleInputUsername1">Woman</label>
                         <select name="woman" class="form-control" >
                         <?php
-                            $quer=mysqli_query($conn,"SELECT * FROM women");
+                            $quer=mysqli_query($conn,"SELECT * FROM parent");
                             while ($row=mysqli_fetch_array($quer)){
                             ?>  
                                 <option value="<?php echo $row['id'] ; ?>"><?php echo $row['name'] ; ?></option>

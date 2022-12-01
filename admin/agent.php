@@ -33,7 +33,7 @@ if (isset($_POST['registeragent'])){
             // $to_email = "receipient@gmail.com";
             $subject = "Women Pregnancy Systeme";
             $body = "Thank For Registring as adverson in our system, You are now Health Adversor";
-            $headers = "From: JIBU Rwanda";
+            $headers = "From: Pregnancy Rwanda";
 
             if (mail($email, $subject, $body, $headers)) {
                 $successmessage="Adversor Register Successfull!";

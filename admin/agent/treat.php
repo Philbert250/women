@@ -7,7 +7,7 @@ if (isset($_POST['transfer'])){
     $advice=$_POST['advice'];
     $period=$_POST['period'];
     $comment=$_POST['comment'];
-    $sql=mysqli_query($conn,"INSERT INTO treat(
+    $sql=mysqli_query($conn,"INSERT INTO event(
         woman,
         treat,
         dose,
@@ -41,10 +41,10 @@ if (isset($_POST['transfer'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">Treatment</h4>
+                    <h4 class="card-title">Event</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="treatall.php" class=" float-right btn btn-primary mr-2">All Treatment</a>
+                        <a href="treatall.php" class=" float-right btn btn-primary mr-2">All Event</a>
                     </div>
                   </div>
                   <?php
@@ -77,7 +77,7 @@ if (isset($_POST['transfer'])){
                         <label for="exampleInputUsername1">Woman</label>
                         <select name="woman" class="form-control" >
                         <?php
-                            $quer=mysqli_query($conn,"SELECT * FROM women");
+                            $quer=mysqli_query($conn,"SELECT * FROM parent");
                             while ($row=mysqli_fetch_array($quer)){
                             ?>  
                                 <option value="<?php echo $row['id'] ; ?>"><?php echo $row['name'] ; ?></option>
@@ -87,7 +87,7 @@ if (isset($_POST['transfer'])){
                         </select>
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Name of Treatment</label>
+                        <label for="exampleInputUsername1">Name of Event</label>
                         <input type="text" name="treat" class="form-control" id="">
                         
                         </div>

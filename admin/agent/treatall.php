@@ -50,7 +50,7 @@ if (isset($_POST['registeragent'])){
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">All Treatment</h4>
+                    <h4 class="card-title">All Event</h4>
                     </div>
                   </div>
                   <div class=" table-border-style">
@@ -73,7 +73,7 @@ if (isset($_POST['registeragent'])){
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $quer=mysqli_query($conn,"SELECT * FROM treat");
+                                    $quer=mysqli_query($conn,"SELECT * FROM event");
                                     while ($row=mysqli_fetch_array($quer)){
                                     ?>
                                     <tr>

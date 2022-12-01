@@ -106,12 +106,12 @@ include 'agent_session.php';
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#stock " aria-expanded="false" aria-controls="stock">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">My Women</span>
+              <span class="menu-title">Parents</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="stock">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="woman.php">All Women</a></li>
+                <li class="nav-item"> <a class="nav-link" href="woman.php">All Parent</a></li>
               </ul>
             </div>
           </li>
@@ -119,13 +119,13 @@ include 'agent_session.php';
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#stockout " aria-expanded="false" aria-controls="stockout">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Treatment</span>
+              <span class="menu-title">Event</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="stockout">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="treat.php">Treat woman</a></li>
-                <li class="nav-item"> <a class="nav-link" href="treatall.php">All record</a></li>
+                <li class="nav-item"> <a class="nav-link" href="treat.php">Event</a></li>
+                <li class="nav-item"> <a class="nav-link" href="treatall.php">All Event</a></li>
               </ul>
             </div>
           </li>

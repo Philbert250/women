@@ -3,7 +3,7 @@ include '../connection.php';
 
 if (isset($_GET['deltreat'])){
 	$del_id=$_GET['deltreat'];
-	$del_quer=mysqli_query($conn,"DELETE FROM treat WHERE id='$del_id' ");	 
+	$del_quer=mysqli_query($conn,"DELETE FROM event WHERE id='$del_id' ");	 
     if ($del_quer) {
         
         echo "<script type='text/javascript'>alert(' Deleted! Successfully!')</script>";   

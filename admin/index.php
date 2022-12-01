@@ -53,7 +53,7 @@ include 'navbar.php';
                     <div class="card-body">
                       <p class="mb-4">Our women</p>
                       <p class="fs-30 mb-2"><?php
-														$select=$conn->query("SELECT * FROM women");
+														$select=$conn->query("SELECT * FROM parent");
 														$count=mysqli_num_rows($select);
 														echo $count;     
 													?></p>

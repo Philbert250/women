@@ -61,7 +61,7 @@
         <h2></h2>
         <h2><span class="typed" data-typed-items="Women Pregnancy Monitoring"></span></h2>
         <div class="actions">
-          <a href="./admin/signin.php" class="btn-get-started">Sign In As Doctor</a>
+          <a href="./admin/signindoctor.php" class="btn-get-started">Sign In As Doctor</a>
           <a href="./admin/signinagent.php" class="btn-services">Sign In As Adversor</a>
         </div>
       </div>

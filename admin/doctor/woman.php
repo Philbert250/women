@@ -7,23 +7,72 @@ if (isset($_POST['registerwoman'])){
     $email=$_POST['email'];
     $dob=$_POST['dob'];
     $location=$_POST['location'];
+    $cell=$_POST['cell'];
+    $village=$_POST['village'];
     $sql=mysqli_query($conn,"INSERT INTO parent(
         name,
         gender,
         dob,
         email,
         phone,
-        location
+        location,
+        cell,
+        village,
+        hospital
     ) VALUES (
         '$name',
         '$gender',
         '$dob',
         '$email',
         '$phone',
-        '$location'
+        '$location',
+        '$cell',
+        '$village',
+        '$doctor_healthcenter'
     )");
     if ($sql) {
-        $successmessage .='Register  product, Successfull';	
+
+
+$subject = "Dear " . $name;
+$detail = "Murakoze kugana ikogonderabuzamo, murakomeza gufata serives witabwehwo numujyana wubuzima kugeza ubyaye";
+//Sending Phone Message
+$msg = $subject .', '. $detail;                                               
+$data = array(
+"sender"=>"+250785300822",
+"recipients"=>$phone,
+"message"=>$msg,    
+ );
+
+$url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+    
+$data = http_build_query ($data);
+
+$username="philbert";
+$password="champion1";
+    
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);  
+curl_setopt($ch,CURLOPT_POST,true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+
+//execute post
+$result = curl_exec($ch);
+$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+//close connection
+curl_close($ch);
+ // echo "<script langauage='text/javascript'>alert('Message Sent')</script>";
+//end of sending message
+
+
+
+
+        $successmessage .='Register  Woman, Successfull';	
     }
     else {
         $errormessage .= mysqli_error($conn);	    
@@ -97,10 +146,29 @@ if (isset($_POST['registerwoman'])){
                         <div class=" col-md-4 col-xl-4 form-group">
                         <label for="exampleInputUsername1">Location/cell</label>
                         <select name="location" class="form-control" id="">
+                            <option value="Gishamvu">Gishamvu</option>
+                            <option value="Karama">Karama</option>
+                            <option value="Kinazi">Kinazi</option>
+                            <option value="Kigoma">Kigoma</option>
+                            <option value="Maraba">Maraba</option>
+                            <option value="Mukura">Mukura</option>
+                            <option value="Ngoma">Ngoma</option>
+                            <option value="Ruhashya">Ruhashya</option>
                             <option value="Huye">Huye</option>
+                            <option value="Rusatira">Rusatira</option>
+                            <option value="Rwaniro">Rwaniro</option>
+                            <option value="Simbi">Simbi</option>
                             <option value="Tumba">Tumba</option>
-                            <option value="Gisagara">Gisagara</option>
+                            <option value="Mbazi">Mbazi</option>
                         </select>
+                        </div>
+                        <div class=" col-md-4 col-xl-4 form-group">
+                        <label for="exampleInputUsername1">Cell</label>
+                        <input type="text" name="cell" class="form-control">
+                        </div>
+                        <div class=" col-md-4 col-xl-4 form-group">
+                        <label for="exampleInputUsername1">Village</label>
+                        <input type="text" name="village" class="form-control">
                         </div>
                     </div>
                     <button type="submit" name="registerwoman" class="btn btn-primary mr-2">New Woman</button>

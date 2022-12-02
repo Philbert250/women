@@ -2,33 +2,30 @@
 include 'navbar.php'; 
 if (isset($_POST['transfer'])){   
     $woman=$_POST['woman'];
-    $treat=$_POST['treat'];
+    $vaccine=$_POST['vaccine'];
     $dose=$_POST['dose'];
-    $advice=$_POST['advice'];
     $period=$_POST['period'];
     $nextperiod=$_POST['nextperiod'];
     $comment=$_POST['comment'];
-    $sql=mysqli_query($conn,"INSERT INTO event(
+    $sql=mysqli_query($conn,"INSERT INTO vaccine(
         woman,
-        treat,
+        vaccine,
         dose,
-        advice,
         period,
         nextperiod,
         comment,
-        adversor_id 
+        admin_id 
     ) VALUES (
         '$woman',
-        '$treat',
+        '$vaccine',
         '$dose',
-        '$advice',
         '$period',
         '$nextperiod',
         '$comment',
-        '$agent_id'
+        '$admin_id'
     )");
     if ($sql) {
-        $successmessage .='Take treatment, Successfull';	
+        $successmessage .='Take Vaccine, Successfull';	
     }
     else {
         $errormessage .= mysqli_error($conn);	    
@@ -44,10 +41,10 @@ if (isset($_POST['transfer'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">Event</h4>
+                    <h4 class="card-title">Service of Vaccine</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="treatall.php" class=" float-right btn btn-primary mr-2">All Event</a>
+                        <a href="vaccineall.php" class=" float-right btn btn-primary mr-2">All Vaccine</a>
                     </div>
                   </div>
                   <?php
@@ -90,8 +87,8 @@ if (isset($_POST['transfer'])){
                         </select>
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Name of Event</label>
-                        <input type="text" name="treat" class="form-control" id="">
+                        <label for="exampleInputUsername1">Name of vaccine</label>
+                        <input type="text" name="vaccine" class="form-control" id="">
                         
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
@@ -100,15 +97,11 @@ if (isset($_POST['transfer'])){
                         
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Advice sent</label>
-                        <textarea name="advice" name="advice" class="form-control"></textarea>
-                        </div>
-                        <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Period</label>
+                        <label for="exampleInputUsername1">Date/period</label>
                         <input type="date" name="period" class="form-control" id="">
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Next Period</label>
+                        <label for="exampleInputUsername1">Next Date/period </label>
                         <input type="date" name="nextperiod" class="form-control" id="">
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
@@ -116,7 +109,7 @@ if (isset($_POST['transfer'])){
                         <textarea name="comment" class="form-control"></textarea>
                         </div>
                     </div>
-                    <button type="submit" name="transfer" class="btn btn-primary mr-2">Treat</button>
+                    <button type="submit" name="transfer" class="btn btn-primary mr-2">Take Vaccine</button>
                   </form>
                 </div>
               </div>

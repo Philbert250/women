@@ -2,33 +2,24 @@
 include 'navbar.php'; 
 if (isset($_POST['transfer'])){   
     $woman=$_POST['woman'];
-    $treat=$_POST['treat'];
-    $dose=$_POST['dose'];
-    $advice=$_POST['advice'];
-    $period=$_POST['period'];
-    $nextperiod=$_POST['nextperiod'];
+    $hospital=$_POST['hospital'];
+    $deseases=$_POST['deseases'];
     $comment=$_POST['comment'];
-    $sql=mysqli_query($conn,"INSERT INTO event(
+    $sql=mysqli_query($conn,"INSERT INTO transferhealth(
         woman,
-        treat,
-        dose,
-        advice,
-        period,
-        nextperiod,
-        comment,
-        adversor_id 
+        hospital,
+        problem,
+        Comments,
+        admin_id 
     ) VALUES (
         '$woman',
-        '$treat',
-        '$dose',
-        '$advice',
-        '$period',
-        '$nextperiod',
+        '$hospital',
+        '$deseases',
         '$comment',
-        '$agent_id'
+        '$admin_id'
     )");
     if ($sql) {
-        $successmessage .='Take treatment, Successfull';	
+        $successmessage .='Make transfer, Successfull';	
     }
     else {
         $errormessage .= mysqli_error($conn);	    
@@ -44,10 +35,10 @@ if (isset($_POST['transfer'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">Event</h4>
+                    <h4 class="card-title">Make A Transfer for woman</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="treatall.php" class=" float-right btn btn-primary mr-2">All Event</a>
+                        <a href="tranferall.php" class=" float-right btn btn-primary mr-2">All Transfer</a>
                     </div>
                   </div>
                   <?php
@@ -90,33 +81,22 @@ if (isset($_POST['transfer'])){
                         </select>
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Name of Event</label>
-                        <input type="text" name="treat" class="form-control" id="">
-                        
+                        <label for="exampleInputUsername1">Transfered to Health Center</label>
+                        <select name="hospital" class="form-control" id="">
+                            <option value="Hospital">Health Center</option>
+                        </select>
+                        </select>
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Dose</label>
-                        <input type="number" name="dose" class="form-control" id="">
-                        
-                        </div>
-                        <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Advice sent</label>
-                        <textarea name="advice" name="advice" class="form-control"></textarea>
-                        </div>
-                        <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Period</label>
-                        <input type="date" name="period" class="form-control" id="">
-                        </div>
-                        <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Next Period</label>
-                        <input type="date" name="nextperiod" class="form-control" id="">
+                        <label for="exampleInputUsername1">Report Problem</label>
+                        <textarea name="deseases" class="form-control"></textarea>
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
                         <label for="exampleInputUsername1">Comment</label>
                         <textarea name="comment" class="form-control"></textarea>
                         </div>
                     </div>
-                    <button type="submit" name="transfer" class="btn btn-primary mr-2">Treat</button>
+                    <button type="submit" name="transfer" class="btn btn-primary mr-2">Make Transfer</button>
                   </form>
                 </div>
               </div>

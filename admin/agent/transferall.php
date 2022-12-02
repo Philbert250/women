@@ -50,10 +50,10 @@ if (isset($_POST['registeragent'])){
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">All Women</h4>
+                    <h4 class="card-title">All Transfer</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="woman.php" class=" float-right btn btn-primary mr-2">Add New Product</a>
+                        <a href="tranfer.php" class=" float-right btn btn-primary mr-2">Make New</a>
                     </div>
                   </div>
                   <div class=" table-border-style">
@@ -65,33 +65,24 @@ if (isset($_POST['registeragent'])){
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Names</th>
-                                        <th>Gender</th>
-                                        <th>Date of time</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>location</th>
-                                        <th>timesent</th>
-                                        <th>action</th>
+                                        <th>Woman Name</th>
+                                        <th>Hospital</th>
+                                        <th>deseases</th>
+                                        <th>Comments</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $quer=mysqli_query($conn,"SELECT * FROM parent");
+                                    $quer=mysqli_query($conn,"SELECT * FROM transferhealth");
                                     while ($row=mysqli_fetch_array($quer)){
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id'] ; ?></td>
-                                        <td><?php echo $row['name'] ; ?></td>
-                                        <td><?php echo $row['gender'] ; ?></td>
-                                        <td><?php echo $row['dob'] ; ?></td>
-                                        <td><?php echo $row['email'] ; ?></td>
-                                        <td><?php echo $row['phone'] ; ?></td>
-                                        <td><?php echo $row['location'] ; ?></td>
-                                        <td><?php echo $row['timesent'] ; ?></td>
-                                        <td>
-                                            <a class="btn btn-danger"  href="delete.php?delwoman=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this woman.')" id="red">Delete</a>
-                                        </td>
+                                        <td><?php echo $row['woman'] ; ?></td>
+                                        <td><?php echo $row['hospital'] ; ?></td>
+                                        <td><?php echo $row['problem'] ; ?></td>
+                                        <td><?php echo $row['Comments'] ; ?></td>
+                                       
                                     </tr>
                                     <?php
                                     }

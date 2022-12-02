@@ -50,7 +50,10 @@ if (isset($_POST['registeragent'])){
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">All Event</h4>
+                    <h4 class="card-title">All Treatment</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="vaccine.php" class=" float-right btn btn-primary mr-2">New Vaccine</a>
                     </div>
                   </div>
                   <div class=" table-border-style">
@@ -65,16 +68,15 @@ if (isset($_POST['registeragent'])){
                                         <th>woman </th>
                                         <th>treat</th>
                                         <th>dose</th>
-                                        <th>advice</th>
-                                        <th>period</th>
-                                        <th>next period</th>
+                                        <th>Period</th>
+                                        <th>Next period</th>
                                         <th>comment</th>
                                         <th>action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $quer=mysqli_query($conn,"SELECT * FROM event");
+                                    $quer=mysqli_query($conn,"SELECT * FROM vaccine");
                                     while ($row=mysqli_fetch_array($quer)){
                                     ?>
                                     <tr>
@@ -83,18 +85,17 @@ if (isset($_POST['registeragent'])){
                                       <td>
                                         <?php
                                             $productid=$row['woman'];
-                                            $quertwo=mysqli_query($conn,"SELECT * FROM  parent WHERE id=$productid");
+                                            $quertwo=mysqli_query($conn,"SELECT * FROM parent WHERE id=$productid");
                                             $rowtwo=mysqli_fetch_array($quertwo);
                                             echo $rowtwo['name'] ;
                                         ?></td>
-                                        <td><?php echo $row['treat'] ; ?></td>
+                                        <td><?php echo $row['vaccine'] ; ?></td>
                                         <td><?php echo $row['dose'] ; ?></td>
-                                        <td><?php echo $row['advice'] ; ?></td> 
-                                        <td><?php echo $row['period'] ; ?></td>
-                                        <td><?php echo $row['nextperiod'] ; ?></td>
+                                        <td><?php echo $row['period'] ; ?></td> 
+                                        <td><?php echo $row['nextperiod'] ; ?></td> 
                                         <td><?php echo $row['comment'] ; ?></td>
                                         <td>
-                                            <a class="btn btn-danger"  href="delete.php?deltreat=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this treate.')" id="red">Delete</a>
+                                            <a class="btn btn-danger"  href="delete.php?delvacci=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this treate.')" id="red">Delete</a>
                                           </td>
                                     </tr>
                                     <?php

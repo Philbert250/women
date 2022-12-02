@@ -1,6 +1,6 @@
 <?php
 include '../connection.php'; 
-include 'agent_session.php'; 
+include 'admin_session.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ include 'agent_session.php';
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a href="index.php" style='color:blue; font-style:bold;font-size:20px;'><b>Women Pregnancy</b></a>
+        <a href="/" style='color:blue; font-style:bold;font-size:20px;'><b>Women Pregnancy</b></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -104,44 +104,74 @@ include 'agent_session.php';
           
           <br><br>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#stock " aria-expanded="false" aria-controls="stock">
+            <a class="nav-link" data-toggle="collapse" href="#product " aria-expanded="false" aria-controls="product">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Parents</span>
+              <span class="menu-title">Parent</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="stock">
+            <div class="collapse" id="product">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="woman.php">All Parent</a></li>
+                <li class="nav-item"> <a class="nav-link" href="woman.php">Register Woman</a></li>
+                <li class="nav-item"> <a class="nav-link" href="womanall.php">ALl Women</a></li>
               </ul>
             </div>
           </li>
           <br><br>
+          
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#stockout " aria-expanded="false" aria-controls="stockout">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Event</span>
+              <span class="menu-title">Community Health works</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="stockout">
+            <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="treat.php">Event</a></li>
-                <li class="nav-item"> <a class="nav-link" href="treatall.php">All Event</a></li>
+                <li class="nav-item"> <a class="nav-link" href="agent.php">New CHW</a></li>
+                <li class="nav-item"> <a class="nav-link" href="agentall.php">All CHW</a></li>
               </ul>
             </div>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#stockouts " aria-expanded="false" aria-controls="stockouts">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basics" aria-expanded="false" aria-controls="ui-basics">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Women's Services</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basics">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="vaccine.php">Vaccine</a></li>
+                <li class="nav-item"> <a class="nav-link" href="vaccineall.php">All Vaccine</a></li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#order" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Transfer</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="stockouts">
+            <div class="collapse" id="order">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="transfer.php">Make Transfer</a></li>
-                <li class="nav-item"> <a class="nav-link" href="transferall.php">All Transfer</a></li>
+                <li class="nav-item"> <a class="nav-link" href="tranfer.php">Make Transfer</a></li>
+                <li class="nav-item"> <a class="nav-link" href="tranferall.php">All Transfer</a></li>
               </ul>
             </div>
           </li>
-          <br><br>
+          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#orders" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Report</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="orders">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="tranfer.php">Generate Report</a></li>
+                <li class="nav-item"> <a class="nav-link" href="tranferall.php">Report From Advisor</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>

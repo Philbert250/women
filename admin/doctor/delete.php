@@ -1,36 +1,36 @@
 <?php
-include './connection.php';
+include '../connection.php';
 
-if (isset($_GET['delhealth'])){
-	$del_id=$_GET['delhealth'];
-	$del_quer=mysqli_query($conn,"DELETE FROM healthcenter WHERE id='$del_id' ");	 
+if (isset($_GET['delwoman'])){
+	$del_id=$_GET['delwoman'];
+	$del_quer=mysqli_query($conn,"DELETE FROM parent WHERE id='$del_id' ");	 
     if ($del_quer) {
         
         echo "<script type='text/javascript'>alert(' Deleted! Successfully!')</script>";   
-        header("location:healthcenterall.php");
+        header("location:womanall.php");
     }
     else {
         
 		?>
         <script type="text/javascript">alert('Delete failed!')</script>
         <?php
-        header("location:healthcenterall.php");
+        header("location:womanall.php");
     }
 }
-if (isset($_GET['deldoctor'])){
-	$del_id=$_GET['deldoctor'];
-	$del_quer=mysqli_query($conn,"DELETE FROM doctor WHERE id='$del_id' ");	 
+if (isset($_GET['delvacci'])){
+	$del_id=$_GET['delvacci'];
+	$del_quer=mysqli_query($conn,"DELETE FROM vaccine WHERE id='$del_id' ");	 
     if ($del_quer) {
         
         echo "<script type='text/javascript'>alert(' Deleted! Successfully!')</script>";   
-        header("location:doctorall.php");
+        header("location:vaccineall.php");
     }
     else {
         
 		?>
         <script type="text/javascript">alert('Delete failed!')</script>
         <?php
-        header("location:doctorall.php");
+        header("location:vaccineall.php");
     }
 }
 if (isset($_GET['delagent'])){

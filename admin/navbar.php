@@ -107,26 +107,26 @@ include 'admin_session.php';
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#stock " aria-expanded="false" aria-controls="stock">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Vaccine</span>
+              <span class="menu-title">Health Center</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="stock">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="waccine.php">woman waccine</a></li>
-                <li class="nav-item"> <a class="nav-link" href="waccineall.php">All vaccine record</a></li>
+                <li class="nav-item"> <a class="nav-link" href="healthcenter.php">Regist New</a></li>
+                <li class="nav-item"> <a class="nav-link" href="healthcenterall.php">All Health Center</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#product " aria-expanded="false" aria-controls="product">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Women Pregnancy</span>
+              <span class="menu-title">Doctors</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="product">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="woman.php">Women</a></li>
-                <li class="nav-item"> <a class="nav-link" href="womanall.php">ALl Women</a></li>
+                <li class="nav-item"> <a class="nav-link" href="doctor.php">Regist New Doctor</a></li>
+                <li class="nav-item"> <a class="nav-link" href="doctorall.php">ALl Doctors</a></li>
               </ul>
             </div>
           </li>
@@ -135,27 +135,12 @@ include 'admin_session.php';
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Health Adversor</span>
+              <span class="menu-title">Report</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="agent.php">New Health Adversor</a></li>
-                <li class="nav-item"> <a class="nav-link" href="agentall.php">All Health Adversor</a></li>
-              </ul>
-            </div>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#order" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Transfer</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="order">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="tranfer.php">Make Transfer</a></li>
-                <li class="nav-item"> <a class="nav-link" href="tranferall.php">All Transfer</a></li>
+                <li class="nav-item"> <a class="nav-link" href="agent.php">View Report</a></li>
               </ul>
             </div>
           </li>

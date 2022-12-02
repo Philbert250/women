@@ -50,7 +50,10 @@ if (isset($_POST['registeragent'])){
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">All Event</h4>
+                    <h4 class="card-title">All Health Center</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="healthcenter.php" class=" float-right btn btn-primary mr-2">Add New Health Center</a>
                     </div>
                   </div>
                   <div class=" table-border-style">
@@ -62,40 +65,27 @@ if (isset($_POST['registeragent'])){
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>woman </th>
-                                        <th>treat</th>
-                                        <th>dose</th>
-                                        <th>advice</th>
-                                        <th>period</th>
-                                        <th>next period</th>
-                                        <th>comment</th>
+                                        <th>Names</th>
+                                        <th>Location</th>
+                                        <th>Address</th>
+                                        <th>Regist Date</th>
                                         <th>action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $quer=mysqli_query($conn,"SELECT * FROM event");
+                                    $quer=mysqli_query($conn,"SELECT * FROM healthcenter");
                                     while ($row=mysqli_fetch_array($quer)){
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id'] ; ?></td>
-                                      
-                                      <td>
-                                        <?php
-                                            $productid=$row['woman'];
-                                            $quertwo=mysqli_query($conn,"SELECT * FROM  parent WHERE id=$productid");
-                                            $rowtwo=mysqli_fetch_array($quertwo);
-                                            echo $rowtwo['name'] ;
-                                        ?></td>
-                                        <td><?php echo $row['treat'] ; ?></td>
-                                        <td><?php echo $row['dose'] ; ?></td>
-                                        <td><?php echo $row['advice'] ; ?></td> 
-                                        <td><?php echo $row['period'] ; ?></td>
-                                        <td><?php echo $row['nextperiod'] ; ?></td>
-                                        <td><?php echo $row['comment'] ; ?></td>
+                                        <td><?php echo $row['centername'] ; ?></td>
+                                        <td><?php echo $row['location'] ; ?></td>
+                                        <td><?php echo $row['address'] ; ?></td>
+                                        <td><?php echo $row['registdate'] ; ?></td>
                                         <td>
-                                            <a class="btn btn-danger"  href="delete.php?deltreat=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this treate.')" id="red">Delete</a>
-                                          </td>
+                                            <a class="btn btn-danger"  href="delete.php?delhealth=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this health center.')" id="red">Delete</a>
+                                        </td>
                                     </tr>
                                     <?php
                                     }

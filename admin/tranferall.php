@@ -81,7 +81,13 @@ if (isset($_POST['registeragent'])){
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id'] ; ?></td>
-                                        <td><?php echo $row['woman'] ; ?></td>
+                                        <td>
+                                        <?php
+                                            $productid=$row['woman'];
+                                            $quertwo=mysqli_query($conn,"SELECT * FROM parent WHERE id=$productid");
+                                            $rowtwo=mysqli_fetch_array($quertwo);
+                                            echo $rowtwo['name'] ;
+                                        ?></td>
                                         <td><?php echo $row['sponsor'] ; ?></td>
                                         <td><?php echo $row['hospital'] ; ?></td>
                                         <td><?php echo $row['deseases'] ; ?></td>

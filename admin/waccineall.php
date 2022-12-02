@@ -82,7 +82,7 @@ if (isset($_POST['registeragent'])){
                                       <td>
                                         <?php
                                             $productid=$row['woman'];
-                                            $quertwo=mysqli_query($conn,"SELECT * FROM women WHERE id=$productid");
+                                            $quertwo=mysqli_query($conn,"SELECT * FROM parent WHERE id=$productid");
                                             $rowtwo=mysqli_fetch_array($quertwo);
                                             echo $rowtwo['name'] ;
                                         ?></td>
